@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, Outlet } from "react-router-dom";
 
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -30,18 +31,18 @@ const App = () => {
         </div>
 
         <nav className="mt-6">
-          <a
-            href="#"
+          <Link
+            to="/"
             className="flex items-center p-3 text-purple-600 bg-gray-100 hover:bg-gray-200"
           >
-            <span className="ml-4">Dashboard</span>
-          </a>
-          <a
-            href="#"
+            <span className="ml-4">Employee</span>
+          </Link>
+          <Link
+            to="/employee_form"
             className="flex items-center p-3 text-gray-700 hover:bg-gray-200"
           >
-            <span className="ml-4">Inbox</span>
-          </a>
+            <span className="ml-4">Add Employee</span>
+          </Link>
           <a
             href="#"
             className="flex items-center p-3 text-gray-700 hover:bg-gray-200"
@@ -90,96 +91,8 @@ const App = () => {
           </button>
         </div>
 
-        <div className="mt-6 bg-white p-3 sm:p-6 rounded-md shadow-md max-w-4xl mx-auto">
-          <h1 className="text-2xl font-semibold text-center md:text-left mb-5 text-gray-800">Add New Employee</h1>
-          <form className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-gray-600">First Name</label>
-                <input
-                  type="text"
-                  placeholder="First Name"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
-                />
-              </div>
-              <div>
-                <label className="block text-gray-600">Last Name</label>
-                <input
-                  type="text"
-                  placeholder="Last Name"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-gray-600">Job Position</label>
-              <input
-                type="text"
-                placeholder="Web Designer"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
-              />
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-gray-600">Email Address</label>
-                <input
-                  type="email"
-                  placeholder="Enter Work Email Address"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
-                />
-              </div>
-              <div>
-                <label className="block text-gray-600">Phone</label>
-                <input
-                  type="tel"
-                  placeholder="Enter Phone Number"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
-                />
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-gray-600">Mobile Number</label>
-                <input
-                  type="tel"
-                  placeholder="Enter Mobile Number"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
-                />
-              </div>
-              <div>
-                <label className="block text-gray-600">Fax</label>
-                <input
-                  type="text"
-                  placeholder="Enter Fax"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
-                />
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 mt-4">
-              <button
-                type="submit"
-                className="bg-purple-600 text-white px-6 py-2 rounded-md shadow-md hover:bg-purple-700"
-              >
-                Save
-              </button>
-              <button
-                type="button"
-                className="bg-purple-600 text-white px-6 py-2 rounded-md shadow-md hover:bg-purple-700"
-              >
-                Save & Add Another
-              </button>
-              <button
-                type="button"
-                className="bg-gray-300 text-gray-700 px-6 py-2 rounded-md shadow-md hover:bg-gray-400"
-              >
-                Cancel
-              </button>
-            </div>
-          </form>
+        <div>
+          <Outlet />
         </div>
       </main>
     </div>
