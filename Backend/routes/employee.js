@@ -81,4 +81,16 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.post('/employee_detail', async(req, res) => {
+    const { employeeId } = req.body;
+
+    try{
+        const currentEmployee = await Employee.findOne({employeeId});
+        res.status(200).json({ message : 'User Found', success : true, employee : currentEmployee})
+    }
+    catch(e){
+        res.status(500).json({message : 'Internal Server Error', success : false});
+    }
+})
+
 module.exports = router;

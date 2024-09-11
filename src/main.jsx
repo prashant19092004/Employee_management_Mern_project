@@ -8,6 +8,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './Layout.jsx'
 import EmployeeList from './components/EmployeeList.jsx'
 import EmployeeForm from './components/EmployeeForm.jsx'
+import EmployDetails from './components/EmployDetails.jsx'
 
 
 const router = createBrowserRouter([
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
           {
             path : '/employee_form',
             element: <EmployeeForm />
+          },
+          {
+            path : '/employee_details',
+            element : <EmployDetails />
           }
         ]
       },
